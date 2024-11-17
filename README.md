@@ -22,5 +22,27 @@ for i to memory
 further it is divided into CL AND CR , I Guess u can figure it out how it works.
 nested loops are the best for this one,for generally would take O(n^2) but depends on the no memory_seg ;
 
+2. DEADLOCK
 
-        
+   multiple processes which are in the same memory can not perform the operation, becuase the resource which they needed is under HOLD
+
+   u can implement circular deadlock free condition usig the formula
+   int r;cin>>r;   /* declaring all the variables.
+   int p;cin>>p;
+   int n;cin>>n;                    */
+   
+   R >= P * (N - 1) + 1.
+
+
+   assume they only have (N-1) resouce remaining , consider it as worst case,
+   mathematically this shish can be derived as
+
+   R - P * (N - 1);
+
+   may not be the prominent sol ever but, kinda works.
+
+
+   To avoid a circular wait, we need to ensure that the remaining resources are sufficient for at least one process to acquire its maximum need (N).
+   This means R - P * (N - 1) >= N.
+
+   
